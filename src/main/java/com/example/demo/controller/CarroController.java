@@ -57,7 +57,7 @@ public class CarroController {
         String mensagem = "O id informado não existe na base de dados";
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
     }
-    @GetMapping("/quantidade-carros")
+    @GetMapping("/quantidade")
     // GET quantidade-carros
     public int quantidadeDeCarros() {
         return carroService.quantidade();

@@ -61,7 +61,7 @@ public class OnibusController {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(mensagem);
     }
 
-    @GetMapping("/quantidade-onibus")
+    @GetMapping("/quantidade")
     // GET quantidade de carros
     public int quantidadeDeOnibus() {
         return onibusService.quantidade();
