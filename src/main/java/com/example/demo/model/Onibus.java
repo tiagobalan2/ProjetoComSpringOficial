@@ -9,6 +9,9 @@ public class Onibus extends Veiculo{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idOnibus;
 
+    // private String Placa;
+    // private String numeroChassi
+
     @NotNull(message = "O tipo de serviço prestado pelo onibus deve ser obrigatoriamente informado")
     @Column(nullable = false)
     private String Servico;

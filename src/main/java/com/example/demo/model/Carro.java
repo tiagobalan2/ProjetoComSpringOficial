@@ -10,6 +10,9 @@ public class Carro extends Veiculo{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCarro;
 
+    // private String Placa;
+    // private String numeroChassi
+
     @NotNull(message = "O numero de portas do carro deve ser obrigatoriamente informado")
     @Column(nullable = false)
     private int numeroPortas;
