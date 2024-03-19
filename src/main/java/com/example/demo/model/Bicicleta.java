@@ -1,16 +1,20 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Bicicleta extends Veiculo{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idBicicleta;
+
+    @NotNull(message = "O aro da bicicleta deve ser obrigatoriamente informado")
+    @Column(nullable = false)
     private int aro;
+
+    @NotNull(message = "O tipo de terreno da bicicleta deve ser obrigatoriamente informado")
+    @Column(nullable = false)
     private String Terreno;
 
     public Bicicleta() {

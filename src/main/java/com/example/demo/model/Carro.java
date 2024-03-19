@@ -2,13 +2,19 @@ package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 public class Carro extends Veiculo{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idCarro;
+
+    @NotNull(message = "O numero de portas do carro deve ser obrigatoriamente informado")
+    @Column(nullable = false)
     private int numeroPortas;
+    @NotNull(message = "O tipo do cambio do carro deve ser obrigatoriamente informado")
+    @Column(nullable = false)
     private String cambio;
 
     public Carro() {

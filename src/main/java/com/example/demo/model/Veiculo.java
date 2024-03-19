@@ -15,12 +15,15 @@ public abstract class Veiculo {
     @NotNull(message = "A marca do veiculo deve ser obrigatoriamente informada")
     @Column(nullable = false)
     private String marca;
+
+    @NotNull(message = "A cor do veiculo deve ser obrigatoriamente informada")
+    @Column(nullable = false)
     private String cor;
 
     @Column(nullable = false)
     @DecimalMin(value = "0.1")
     private double preco;
-    @NotNull(message = "Campo ano não pode ser nulo.")
+    @NotNull(message = "O ano do veiculo deve ser obrigatoriamente informado")
     @Column(nullable = false)
     @Size(min = 4)
     private String ano;
