@@ -63,6 +63,17 @@ public class CarroController {
         return carroService.quantidade();
     }
 
+
+    @GetMapping("/marca/{marca}")
+    public ResponseEntity<List<Carro>> listarPorMarca(@PathVariable String marca) {
+        List<Carro> carros = carroService.listarPorMarca(marca);
+        if (carros.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(carros, HttpStatus.OK);
+    }
+
+
 }
 
 

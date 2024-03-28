@@ -68,6 +68,15 @@ public class OnibusController {
     }
 
 
+    @GetMapping("/marca/{marca}")
+    public ResponseEntity<List<Onibus>> listarPorMarca(@PathVariable String marca) {
+        List<Onibus> onibus = onibusService.listarPorMarca(marca);
+        if (onibus.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(onibus, HttpStatus.OK);
+    }
+
 }
 
 

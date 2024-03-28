@@ -59,4 +59,10 @@ public class CarroService implements VeiculoService<Carro> {
         return null;
     }
 
+    @Override
+    public List<Carro> listarPorMarca(String marca) {
+        return (carroRepository.findByMarca(marca));
+    }
+
+
 }

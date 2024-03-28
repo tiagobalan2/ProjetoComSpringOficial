@@ -61,4 +61,11 @@ public class OnibusService implements VeiculoService<Onibus>{
         }
         return null;
     }
+
+    @Override
+    public List<Onibus> listarPorMarca(String marca) {
+        return (onibusRepository.findByMarca(marca));
+    }
+
+
 }

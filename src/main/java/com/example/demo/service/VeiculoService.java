@@ -16,4 +16,6 @@ public interface VeiculoService <T extends Veiculo>{
     int quantidade();
 
     T listarPorId(Long id);
+
+    List<T> listarPorMarca(String marca);
 }

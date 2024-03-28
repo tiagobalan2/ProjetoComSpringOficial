@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.Bicicleta;
 import com.example.demo.model.Carro;
+import com.example.demo.model.Onibus;
 import com.example.demo.service.BicicletaService;
 import com.example.demo.service.CarroService;
 import jakarta.validation.Valid;
@@ -63,5 +64,15 @@ public class BicicletaController {
     // GET quantidade-bicicletas
     public int quantidadeDeBicicletas() {
         return bicicletaService.quantidade();
+    }
+
+
+    @GetMapping("/marca/{marca}")
+    public ResponseEntity<List<Bicicleta>> listarPorMarca(@PathVariable String marca) {
+        List<Bicicleta> bicicletas = bicicletaService.listarPorMarca(marca);
+        if (bicicletas.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(bicicletas, HttpStatus.OK);
     }
 }

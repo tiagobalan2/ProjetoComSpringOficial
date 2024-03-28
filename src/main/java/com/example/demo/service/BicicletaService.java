@@ -55,4 +55,9 @@ public class BicicletaService implements VeiculoService<Bicicleta> {
         }
         return null;
     }
+
+    @Override
+    public List<Bicicleta> listarPorMarca(String marca) {
+        return (bicicletaRepository.findByMarca(marca));
+    }
 }
