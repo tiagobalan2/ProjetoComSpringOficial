@@ -12,4 +12,8 @@ public interface OnibusRepository extends JpaRepository<Onibus, Long> {
     // Query me permite definir consultas personalizadas SQL nativo
     @Query("SELECT o FROM Onibus o WHERE o.marca = ?1") // o é a entindade onibus
     List<Onibus> findByMarca(String marca);
+
+    @Query("SELECT o FROM Onibus o WHERE o.preco > ?1")
+    List<Onibus> findPrecoMaiorque(double preco);
+
 }

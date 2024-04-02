@@ -32,7 +32,7 @@ public class Onibus extends Veiculo{
     public Onibus(String marca, String cor, double preco, String ano, long idOnibus, String servico, String quantidadePassageiros) {
         super(marca, cor, preco, ano);
         this.idOnibus = idOnibus;
-        Servico = servico;
+        this.Servico = servico;
         this.quantidadePassageiros = quantidadePassageiros;
     }
 

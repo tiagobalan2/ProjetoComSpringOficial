@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 import com.example.demo.model.Bicicleta;
+import com.example.demo.model.Carro;
+import com.example.demo.model.Onibus;
 import com.example.demo.repository.BicicletaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -60,4 +62,10 @@ public class BicicletaService implements VeiculoService<Bicicleta> {
     public List<Bicicleta> listarPorMarca(String marca) {
         return (bicicletaRepository.findByMarca(marca));
     }
+
+    @Override
+    public List<Bicicleta> listarPorPrecoMaior10K() {
+        return bicicletaRepository.findPrecoMaiorque(10000.00);
+    }
+
 }

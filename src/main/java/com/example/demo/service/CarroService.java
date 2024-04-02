@@ -64,5 +64,13 @@ public class CarroService implements VeiculoService<Carro> {
         return (carroRepository.findByMarca(marca));
     }
 
+    @Override
+    public List<Carro> listarPorPrecoMaior10K() {
+        return carroRepository.findPrecoMaiorque(10000.00);
+    }
+
+
+
+
 
 }

@@ -75,4 +75,13 @@ public class BicicletaController {
         }
         return new ResponseEntity<>(bicicletas, HttpStatus.OK);
     }
+
+    @GetMapping("/precoMaiorQue10K")
+    public ResponseEntity<List<Bicicleta>> listarPrecoMaior10K() {
+        List<Bicicleta> bicicletas = bicicletaService.listarPorPrecoMaior10K();
+        if (bicicletas.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(bicicletas, HttpStatus.OK);
+    }
 }

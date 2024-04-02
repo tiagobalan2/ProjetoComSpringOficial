@@ -15,7 +15,6 @@ public class CarroController {
 
     @Autowired
     CarroService carroService;
-
     @GetMapping
     // GET
     public List<Carro> listarCarros() {
@@ -73,6 +72,14 @@ public class CarroController {
         return new ResponseEntity<>(carros, HttpStatus.OK);
     }
 
+    @GetMapping("/precoMaiorQue10K")
+    public ResponseEntity<List<Carro>> listarPrecoMaior10K() {
+        List<Carro> carros = carroService.listarPorPrecoMaior10K();
+        if (carros.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(carros, HttpStatus.OK);
+    }
 
 }
 

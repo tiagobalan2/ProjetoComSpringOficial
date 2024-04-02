@@ -77,6 +77,15 @@ public class OnibusController {
         return new ResponseEntity<>(onibus, HttpStatus.OK);
     }
 
+    @GetMapping("/precoMaiorQue10K")
+    public ResponseEntity<List<Onibus>> listarPrecoMaior10K() {
+        List<Onibus> onibus = onibusService.listarPorPrecoMaior10K();
+        if (onibus.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(onibus, HttpStatus.OK);
+    }
+
 }
 
 

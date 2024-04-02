@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Bicicleta;
 import com.example.demo.model.Onibus;
 import com.example.demo.model.Veiculo;
 import com.example.demo.repository.OnibusRepository;
@@ -67,5 +68,9 @@ public class OnibusService implements VeiculoService<Onibus>{
         return (onibusRepository.findByMarca(marca));
     }
 
+    @Override
+    public List<Onibus> listarPorPrecoMaior10K() {
+        return onibusRepository.findPrecoMaiorque(10000.00);
+    }
 
 }
