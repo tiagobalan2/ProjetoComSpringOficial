@@ -13,7 +13,7 @@ public interface OnibusRepository extends JpaRepository<Onibus, Long> {
     @Query("SELECT o FROM Onibus o WHERE o.marca = ?1") // o é a entindade onibus
     List<Onibus> findByMarca(String marca);
 
-    @Query("SELECT o FROM Onibus o WHERE o.preco > ?1")
+    @Query("SELECT o FROM Onibus o WHERE o.preco > :preco")
     List<Onibus> findPrecoMaiorque(double preco);
 
 }
